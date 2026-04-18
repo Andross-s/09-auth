@@ -1,8 +1,8 @@
-import noteService from "@/lib/api";
-import type { DraftNote } from "@/lib/api";
+import { createNote as createNoteRequest } from "@/lib/api/clientApi";
+import type { DraftNote } from "@/lib/api/clientApi";
 
 async function createNote(note: DraftNote) {
-  return noteService.createNote(note);
+  return createNoteRequest(note);
 }
 
 export default createNote;

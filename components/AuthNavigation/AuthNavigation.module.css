@@ -25,6 +25,7 @@
 .navigationItem {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .navigationLink {
@@ -35,4 +36,9 @@
 
 .navigationLink:hover {
   color: #ddd;
+}
+
+.logoutButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
