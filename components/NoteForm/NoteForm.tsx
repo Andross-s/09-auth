@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import type { TAGS } from "@/types/note";
-import createNote from "@/app/notes/action/create/createNote";
+import createNote from "@/app/(private routes)/notes/action/create/createNote";
 import type { DraftNote } from "@/lib/api";
 import { useNoteStore } from "@/lib/store/noteStore";
 
