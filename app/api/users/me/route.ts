@@ -23,12 +23,15 @@ export async function GET() {
       return NextResponse.json(
         { error: error.message, response: error.response?.data },
         {
-          status: error.response?.status ?? 500,
+          status: error.response?.status,
         },
       );
     }
     logErrorResponse({ message: (error as Error).message });
-    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 },
+    );
   }
 }
 
@@ -48,7 +51,7 @@ export async function PATCH(request: Request) {
       logErrorResponse(error.response?.data);
       return NextResponse.json(
         { error: error.message, response: error.response?.data },
-        { status: error.response?.status ?? 500 },
+        { status: error.response?.status },
       );
     }
     logErrorResponse({ message: (error as Error).message });

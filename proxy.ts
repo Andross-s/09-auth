@@ -68,9 +68,7 @@ export async function proxy(request: NextRequest) {
   }
 
   if (hasSession && AUTH_PATHS.includes(pathname)) {
-    const redirectResponse = NextResponse.redirect(
-      new URL("/profile", request.url),
-    );
+    const redirectResponse = NextResponse.redirect(new URL("/", request.url));
 
     for (const cookie of response.cookies.getAll()) {
       redirectResponse.cookies.set(cookie);
